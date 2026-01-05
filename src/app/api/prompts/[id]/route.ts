@@ -3,10 +3,11 @@ import { getPromptById, incrementPromptView } from '@/lib/prompts'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const prompt = await getPromptById(params.id)
+    const { id } = await params
+    const prompt = await getPromptById(id)
 
     if (!prompt) {
       return NextResponse.json(
@@ -16,7 +17,7 @@ export async function GET(
     }
 
     // Increment view count
-    await incrementPromptView(params.id)
+    await incrementPromptView(id)
 
     return NextResponse.json(prompt)
   } catch (error) {
