@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Zap, Search, User, LogOut } from 'lucide-react'
+import { Zap, User, LogOut } from 'lucide-react'
 import { Button } from './ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import {

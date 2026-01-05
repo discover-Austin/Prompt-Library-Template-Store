@@ -1,4 +1,4 @@
-import { Prompt, Prisma } from '@prisma/client'
+import { Prisma } from '@prisma/client'
 import { prisma } from './prisma'
 
 export type PromptWithPack = Prisma.PromptGetPayload<{

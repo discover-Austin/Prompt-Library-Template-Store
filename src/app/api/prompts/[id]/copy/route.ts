@@ -3,10 +3,11 @@ import { incrementPromptCopy } from '@/lib/prompts'
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    await incrementPromptCopy(params.id)
+    const { id } = await params
+    await incrementPromptCopy(id)
 
     return NextResponse.json({ success: true })
   } catch (error) {

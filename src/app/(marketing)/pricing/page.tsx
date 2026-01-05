@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Check, Zap } from 'lucide-react'
+import { Check } from 'lucide-react'
 import { formatPrice } from '@/lib/utils'
 import { useRouter } from 'next/navigation'
 
