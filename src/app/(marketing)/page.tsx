@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ArrowRight, Zap, Code, Pen, TrendingUp, Star, Check } from 'lucide-react'
+import { ArrowRight, Zap, Code, TrendingUp, Star } from 'lucide-react'
 import { getFeaturedPrompts, CATEGORIES } from '@/lib/prompts'
 import { PromptCard } from '@/components/prompt-card'
 
