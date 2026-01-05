@@ -1,0 +1,743 @@
+[
+  {
+    "title": "Chain-of-Thought Code Review",
+    "description": "Get thorough, step-by-step code reviews from a senior engineer perspective with specific improvement suggestions.",
+    "content": "You are a senior software engineer conducting a thorough code review. Analyze the following code step by step:\n\n1. First, understand the overall purpose and architecture\n2. Check for potential bugs, edge cases, and error handling\n3. Evaluate performance implications\n4. Assess readability and maintainability\n5. Suggest specific improvements with code examples\n\nCode to review:\n```{{code}}```\n\nLanguage: {{language}}\nContext: {{context}}\n\nProvide your review in this format:\n## Summary\n## Critical Issues\n## Improvements\n## Refactored Code",
+    "variables": [
+      {"name": "code", "description": "The code to review", "default": ""},
+      {"name": "language", "description": "Programming language", "default": "JavaScript"},
+      {"name": "context", "description": "What this code is supposed to do", "default": ""}
+    ],
+    "category": "coding",
+    "subcategory": "code-review",
+    "tags": ["code-review", "debugging", "best-practices", "refactoring"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": true
+  },
+  {
+    "title": "Test Case Generator",
+    "description": "Generate comprehensive unit and integration tests with edge cases, following AAA pattern and best practices.",
+    "content": "Generate comprehensive test cases for the following function/code:\n\n```{{code}}```\n\nRequirements:\n- Use {{test_framework}} testing framework\n- Include unit tests for all public methods\n- Add edge case tests (null, empty, boundary values)\n- Include integration tests if applicable\n- Add performance tests for critical paths\n- Follow AAA pattern (Arrange, Act, Assert)\n- Include descriptive test names\n\nOutput complete, runnable test code with comments explaining each test's purpose.",
+    "variables": [
+      {"name": "code", "description": "Function or code to test", "default": ""},
+      {"name": "test_framework", "description": "Testing framework to use", "default": "Jest"}
+    ],
+    "category": "coding",
+    "subcategory": "testing",
+    "tags": ["testing", "unit-tests", "tdd", "quality-assurance"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": true
+  },
+  {
+    "title": "API Documentation Generator",
+    "description": "Create complete API documentation with OpenAPI spec, examples, and error handling details.",
+    "content": "Generate complete API documentation for the following endpoint/code:\n\n```{{code}}```\n\nCreate documentation including:\n1. Endpoint description\n2. Request parameters (path, query, body) with types\n3. Response schema with examples\n4. Error responses and codes\n5. Authentication requirements\n6. Rate limiting information\n7. Example curl commands\n8. SDK examples in {{languages}}\n\nFormat as OpenAPI 3.0 specification AND human-readable markdown.",
+    "variables": [
+      {"name": "code", "description": "API code or endpoint details", "default": ""},
+      {"name": "languages", "description": "Languages for SDK examples", "default": "JavaScript, Python, Go"}
+    ],
+    "category": "coding",
+    "subcategory": "documentation",
+    "tags": ["api", "documentation", "openapi", "rest"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": false
+  },
+  {
+    "title": "Debug Assistant",
+    "description": "Systematic debugging help that explains errors, identifies causes, and provides solutions.",
+    "content": "I'm encountering an error in my {{language}} code. Help me debug it systematically.\n\nError message:\n```\n{{error}}\n```\n\nRelevant code:\n```{{code}}```\n\nWhat I've already tried: {{attempts}}\n\nPlease:\n1. Explain what the error means\n2. Identify the most likely cause\n3. Provide step-by-step debugging approach\n4. Give the corrected code with explanation\n5. Suggest how to prevent this in the future",
+    "variables": [
+      {"name": "language", "description": "Programming language", "default": "JavaScript"},
+      {"name": "error", "description": "Error message you're getting", "default": ""},
+      {"name": "code", "description": "Code that's causing the error", "default": ""},
+      {"name": "attempts", "description": "What you've tried so far", "default": ""}
+    ],
+    "category": "coding",
+    "subcategory": "debugging",
+    "tags": ["debugging", "troubleshooting", "error-fixing"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": false
+  },
+  {
+    "title": "Architecture Decision Record",
+    "description": "Create professional ADRs for documenting technical decisions with context and consequences.",
+    "content": "Create an Architecture Decision Record (ADR) for the following technical decision:\n\nDecision: {{decision}}\nContext: {{context}}\nConstraints: {{constraints}}\n\nGenerate a complete ADR with:\n## Title\n## Status\n## Context\n## Decision\n## Consequences (positive and negative)\n## Alternatives Considered\n## Related Decisions\n## References\n\nMake it professional enough for enterprise documentation.",
+    "variables": [
+      {"name": "decision", "description": "The technical decision being made", "default": ""},
+      {"name": "context", "description": "Why this decision is needed", "default": ""},
+      {"name": "constraints", "description": "Technical or business constraints", "default": ""}
+    ],
+    "category": "coding",
+    "subcategory": "architecture",
+    "tags": ["architecture", "documentation", "adr", "decisions"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "starter",
+    "featured": false
+  },
+  {
+    "title": "Refactoring Assistant",
+    "description": "Refactor code with SOLID principles, clean code practices, and language-specific idioms.",
+    "content": "Refactor the following code to improve {{improvement_goal}}:\n\n```{{code}}```\n\nApply these principles:\n- SOLID principles where applicable\n- DRY (Don't Repeat Yourself)\n- Clean Code practices\n- {{language}} idioms and best practices\n\nProvide:\n1. The refactored code\n2. Explanation of each change\n3. Before/after complexity comparison\n4. Any tradeoffs introduced",
+    "variables": [
+      {"name": "code", "description": "Code to refactor", "default": ""},
+      {"name": "improvement_goal", "description": "What to improve (readability, performance, etc.)", "default": "readability and maintainability"},
+      {"name": "language", "description": "Programming language", "default": "JavaScript"}
+    ],
+    "category": "coding",
+    "subcategory": "refactoring",
+    "tags": ["refactoring", "clean-code", "solid", "best-practices"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "starter",
+    "featured": false
+  },
+  {
+    "title": "SQL Query Optimizer",
+    "description": "Optimize SQL queries with performance analysis, index recommendations, and explain plans.",
+    "content": "Optimize the following SQL query for {{database_type}}:\n\n```sql\n{{query}}\n```\n\nTable schemas:\n{{schemas}}\n\nExpected data volume: {{volume}}\n\nProvide:\n1. Analysis of current query performance issues\n2. Optimized query with explanations\n3. Recommended indexes\n4. EXPLAIN plan interpretation\n5. Alternative approaches if applicable",
+    "variables": [
+      {"name": "query", "description": "SQL query to optimize", "default": ""},
+      {"name": "database_type", "description": "Database system", "default": "PostgreSQL"},
+      {"name": "schemas", "description": "Table structure", "default": ""},
+      {"name": "volume", "description": "Expected rows/data size", "default": "millions of rows"}
+    ],
+    "category": "coding",
+    "subcategory": "database",
+    "tags": ["sql", "database", "optimization", "performance"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "starter",
+    "featured": false
+  },
+  {
+    "title": "Git Commit Message Generator",
+    "description": "Generate conventional commit messages with proper format, descriptions, and issue references.",
+    "content": "Generate a conventional commit message for the following changes:\n\nFiles changed: {{files}}\nDiff summary: {{diff}}\nContext: {{context}}\n\nFollow these rules:\n- Use conventional commits format (type(scope): description)\n- Types: feat, fix, docs, style, refactor, test, chore\n- Keep subject line under 72 characters\n- Add body with bullet points for significant changes\n- Reference issue numbers if applicable: {{issue}}\n\nOutput format:\n```\n<type>(<scope>): <short description>\n\n<body with details>\n\n<footer with references>\n```",
+    "variables": [
+      {"name": "files", "description": "Files that were changed", "default": ""},
+      {"name": "diff", "description": "Summary of changes", "default": ""},
+      {"name": "context", "description": "Why the change was made", "default": ""},
+      {"name": "issue", "description": "Issue number (optional)", "default": ""}
+    ],
+    "category": "coding",
+    "subcategory": "git",
+    "tags": ["git", "commits", "version-control", "conventional-commits"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": false
+  },
+  {
+    "title": "Code Translation",
+    "description": "Translate code between programming languages while maintaining functionality and idioms.",
+    "content": "Translate the following code from {{source_language}} to {{target_language}}:\n\n```{{code}}```\n\nRequirements:\n- Maintain exact functionality\n- Use idiomatic {{target_language}} patterns\n- Preserve comments (translated)\n- Handle language-specific differences explicitly\n- Add notes for any unavoidable behavioral differences\n\nOutput the complete translated code with inline comments explaining significant adaptations.",
+    "variables": [
+      {"name": "code", "description": "Code to translate", "default": ""},
+      {"name": "source_language", "description": "Original language", "default": "Python"},
+      {"name": "target_language", "description": "Target language", "default": "JavaScript"}
+    ],
+    "category": "coding",
+    "subcategory": "translation",
+    "tags": ["code-translation", "language-conversion", "migration"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "starter",
+    "featured": false
+  },
+  {
+    "title": "Regex Builder",
+    "description": "Create and explain regular expressions with test cases and cross-language examples.",
+    "content": "Create a regular expression for the following requirement:\n\nRequirement: {{requirement}}\n\nTest cases that should match:\n{{match_cases}}\n\nTest cases that should NOT match:\n{{no_match_cases}}\n\nProvide:\n1. The regex pattern\n2. Breakdown explanation of each component\n3. Flags needed (if any)\n4. Examples in {{languages}}\n5. Edge cases to be aware of\n6. Alternative patterns if applicable",
+    "variables": [
+      {"name": "requirement", "description": "What the regex should match", "default": ""},
+      {"name": "match_cases", "description": "Examples that should match", "default": ""},
+      {"name": "no_match_cases", "description": "Examples that should not match", "default": ""},
+      {"name": "languages", "description": "Programming languages", "default": "JavaScript, Python"}
+    ],
+    "category": "coding",
+    "subcategory": "regex",
+    "tags": ["regex", "pattern-matching", "validation"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": false
+  },
+  {
+    "title": "Blog Post Framework",
+    "description": "Write comprehensive, SEO-optimized blog posts with engaging structure and clear CTAs.",
+    "content": "Write a comprehensive blog post on: {{topic}}\n\nTarget audience: {{audience}}\nDesired length: {{length}} words\nTone: {{tone}}\nGoal: {{goal}}\n\nStructure:\n1. Hook opening (surprising stat, question, or story)\n2. Problem/opportunity statement\n3. Main content with 3-5 key points\n4. Each point with examples/evidence\n5. Practical takeaways\n6. Strong CTA\n\nInclude:\n- SEO-optimized title (under 60 chars)\n- Meta description (under 160 chars)\n- 5 relevant keywords\n- Subheadings for scannability\n- Internal link suggestions: {{related_content}}",
+    "variables": [
+      {"name": "topic", "description": "Blog post topic", "default": ""},
+      {"name": "audience", "description": "Target readers", "default": ""},
+      {"name": "length", "description": "Word count", "default": "1500"},
+      {"name": "tone", "description": "Writing tone", "default": "professional yet conversational"},
+      {"name": "goal", "description": "What action should readers take", "default": ""},
+      {"name": "related_content", "description": "Related articles to link", "default": ""}
+    ],
+    "category": "writing",
+    "subcategory": "blogging",
+    "tags": ["blogging", "content-marketing", "seo", "copywriting"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": true
+  },
+  {
+    "title": "Email Sequence Generator",
+    "description": "Create multi-email sequences with subject lines, preview text, and optimal timing.",
+    "content": "Create a {{sequence_length}}-email sequence for: {{purpose}}\n\nProduct/Service: {{product}}\nTarget audience: {{audience}}\nDesired action: {{cta}}\n\nFor each email provide:\n- Subject line (+ 2 alternatives)\n- Preview text\n- Email body\n- CTA button text\n- Optimal send timing\n\nEmail types to include:\n- Welcome/introduction\n- Value/education\n- Social proof\n- Objection handling\n- Urgency/scarcity\n- Final call\n\nTone: {{tone}}",
+    "variables": [
+      {"name": "sequence_length", "description": "Number of emails", "default": "5"},
+      {"name": "purpose", "description": "Goal of the sequence", "default": ""},
+      {"name": "product", "description": "What you're promoting", "default": ""},
+      {"name": "audience", "description": "Who you're emailing", "default": ""},
+      {"name": "cta", "description": "Desired action", "default": ""},
+      {"name": "tone", "description": "Email tone", "default": "friendly and helpful"}
+    ],
+    "category": "writing",
+    "subcategory": "email",
+    "tags": ["email-marketing", "copywriting", "sequences", "nurture"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "starter",
+    "featured": true
+  },
+  {
+    "title": "LinkedIn Content Generator",
+    "description": "Create engaging LinkedIn posts with hooks, stories, and strategic hashtags.",
+    "content": "Create a LinkedIn post about: {{topic}}\n\nGoal: {{goal}}\nMy background: {{background}}\n\nRequirements:\n- Hook in first line (pattern interrupt)\n- Personal story or observation\n- Actionable insight\n- Engagement prompt at end\n- Appropriate line breaks for readability\n- 3-5 relevant hashtags\n- Under 1300 characters for full visibility\n\nAlso provide:\n- 3 alternative hooks\n- Best posting time suggestion\n- Follow-up comment strategy",
+    "variables": [
+      {"name": "topic", "description": "Post topic", "default": ""},
+      {"name": "goal", "description": "What you want to achieve", "default": ""},
+      {"name": "background", "description": "Your expertise/perspective", "default": ""}
+    ],
+    "category": "writing",
+    "subcategory": "social-media",
+    "tags": ["linkedin", "social-media", "personal-branding", "thought-leadership"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "starter",
+    "featured": false
+  },
+  {
+    "title": "Technical Documentation",
+    "description": "Create comprehensive technical docs with installation, examples, and troubleshooting.",
+    "content": "Create technical documentation for: {{subject}}\n\nAudience technical level: {{level}}\nDocumentation type: {{type}}\n\nInclude:\n1. Overview/Introduction\n2. Prerequisites\n3. Installation/Setup\n4. Quick Start\n5. Core Concepts\n6. API Reference (if applicable)\n7. Examples\n8. Troubleshooting\n9. FAQ\n10. Changelog\n\nFormat in clean Markdown with proper code blocks, tables, and navigation.",
+    "variables": [
+      {"name": "subject", "description": "What to document", "default": ""},
+      {"name": "level", "description": "Reader technical level", "default": "intermediate"},
+      {"name": "type", "description": "Doc type (API, library, tool, etc.)", "default": ""}
+    ],
+    "category": "writing",
+    "subcategory": "documentation",
+    "tags": ["documentation", "technical-writing", "developer-docs"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "starter",
+    "featured": false
+  },
+  {
+    "title": "Case Study Template",
+    "description": "Write compelling case studies with metrics, quotes, and clear takeaways.",
+    "content": "Write a compelling case study for:\n\nClient: {{client}}\nIndustry: {{industry}}\nChallenge: {{challenge}}\nSolution: {{solution}}\nResults: {{results}}\n\nStructure:\n1. Executive Summary (2-3 sentences)\n2. Client Background\n3. The Challenge (with specific pain points)\n4. Solution Approach (step by step)\n5. Implementation Details\n6. Results & Metrics (quantified)\n7. Client Quote/Testimonial\n8. Key Takeaways\n9. CTA\n\nMake it scannable with callout boxes for key metrics.",
+    "variables": [
+      {"name": "client", "description": "Client name/type", "default": ""},
+      {"name": "industry", "description": "Client industry", "default": ""},
+      {"name": "challenge", "description": "Problem they faced", "default": ""},
+      {"name": "solution", "description": "How you helped", "default": ""},
+      {"name": "results", "description": "Outcomes achieved", "default": ""}
+    ],
+    "category": "writing",
+    "subcategory": "case-studies",
+    "tags": ["case-studies", "marketing", "sales-enablement", "storytelling"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "starter",
+    "featured": false
+  },
+  {
+    "title": "Product Description Writer",
+    "description": "Write persuasive product descriptions that highlight benefits and drive conversions.",
+    "content": "Write a compelling product description for:\n\nProduct: {{product_name}}\nKey features: {{features}}\nTarget customer: {{target_customer}}\nMain benefit: {{main_benefit}}\nPrice point: {{price}}\n\nCreate:\n1. Attention-grabbing headline\n2. Opening hook that addresses customer pain\n3. Feature-benefit bullets (emphasize outcomes, not specs)\n4. Social proof element\n5. Urgency/scarcity if applicable\n6. Strong CTA\n\nTone: {{tone}}\nLength: {{length}} words\n\nOptimize for: {{platform}}",
+    "variables": [
+      {"name": "product_name", "description": "Product name", "default": ""},
+      {"name": "features", "description": "Key product features", "default": ""},
+      {"name": "target_customer", "description": "Who it's for", "default": ""},
+      {"name": "main_benefit", "description": "Primary value proposition", "default": ""},
+      {"name": "price", "description": "Price or price range", "default": ""},
+      {"name": "tone", "description": "Writing tone", "default": "enthusiastic but authentic"},
+      {"name": "length", "description": "Target word count", "default": "150"},
+      {"name": "platform", "description": "Where it will be used", "default": "e-commerce site"}
+    ],
+    "category": "writing",
+    "subcategory": "copywriting",
+    "tags": ["copywriting", "e-commerce", "product-descriptions", "conversion"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": false
+  },
+  {
+    "title": "Press Release Writer",
+    "description": "Create professional press releases following AP style with newsworthy angles.",
+    "content": "Write a professional press release for:\n\nAnnouncement: {{announcement}}\nCompany: {{company}}\nDate: {{date}}\nKey details: {{details}}\nQuote from: {{quote_source}}\n\nFollow AP Style and include:\n1. Attention-grabbing headline\n2. Dateline and lead paragraph (who, what, when, where, why)\n3. Supporting paragraphs with key details\n4. Quote from executive/stakeholder\n5. Additional context and background\n6. Boilerplate about company\n7. Media contact information\n\nMake it newsworthy by focusing on: {{news_angle}}",
+    "variables": [
+      {"name": "announcement", "description": "What you're announcing", "default": ""},
+      {"name": "company", "description": "Company name", "default": ""},
+      {"name": "date", "description": "Release date", "default": ""},
+      {"name": "details", "description": "Important details", "default": ""},
+      {"name": "quote_source", "description": "Who to quote", "default": ""},
+      {"name": "news_angle", "description": "What makes this newsworthy", "default": ""}
+    ],
+    "category": "writing",
+    "subcategory": "pr",
+    "tags": ["press-release", "pr", "media", "communications"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "starter",
+    "featured": false
+  },
+  {
+    "title": "Competitive Analysis Framework",
+    "description": "Conduct comprehensive competitor analysis with SWOT, positioning, and strategic recommendations.",
+    "content": "Conduct a comprehensive competitive analysis for:\n\nMy company/product: {{company}}\nCompetitors to analyze: {{competitors}}\nIndustry: {{industry}}\n\nAnalyze each competitor on:\n1. Product/service offerings\n2. Pricing strategy\n3. Target market\n4. Unique value proposition\n5. Marketing channels\n6. Strengths and weaknesses\n7. Market positioning\n\nProvide:\n- Comparison matrix\n- SWOT for each competitor\n- Opportunities for differentiation\n- Recommended strategic moves\n- Risk assessment",
+    "variables": [
+      {"name": "company", "description": "Your company/product", "default": ""},
+      {"name": "competitors", "description": "Competitors to analyze", "default": ""},
+      {"name": "industry", "description": "Your industry", "default": ""}
+    ],
+    "category": "business",
+    "subcategory": "strategy",
+    "tags": ["competitive-analysis", "market-research", "strategy", "swot"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "pro",
+    "featured": true
+  },
+  {
+    "title": "Business Plan Section Generator",
+    "description": "Generate investor-ready business plan sections with metrics, projections, and risk analysis.",
+    "content": "Generate the {{section}} section of a business plan for:\n\nBusiness: {{business}}\nIndustry: {{industry}}\nStage: {{stage}}\nFunding goal: {{funding}}\n\nSection requirements:\n- Professional investor-ready language\n- Specific metrics and projections\n- Market data and citations\n- Risk acknowledgment with mitigation\n- Clear formatting with headers\n\nMake it compelling but realistic.",
+    "variables": [
+      {"name": "section", "description": "Which section (Executive Summary, Market Analysis, etc.)", "default": ""},
+      {"name": "business", "description": "Business description", "default": ""},
+      {"name": "industry", "description": "Industry/market", "default": ""},
+      {"name": "stage", "description": "Business stage (startup, growth, etc.)", "default": ""},
+      {"name": "funding", "description": "How much funding needed", "default": ""}
+    ],
+    "category": "business",
+    "subcategory": "planning",
+    "tags": ["business-plan", "fundraising", "investors", "strategy"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "pro",
+    "featured": false
+  },
+  {
+    "title": "Meeting Agenda & Summary",
+    "description": "Create structured meeting agendas and synthesize meeting notes into actionable summaries.",
+    "content": "Create a structured meeting agenda for: {{meeting_type}}\n\nParticipants: {{participants}}\nDuration: {{duration}}\nGoals: {{goals}}\n\nProvide:\n1. Pre-meeting preparation items\n2. Timed agenda with owners\n3. Discussion frameworks for each topic\n4. Decision-making structure\n5. Action item template\n6. Follow-up email template\n\nAfter the meeting, I'll provide notes for you to create:\n- Executive summary\n- Decisions made\n- Action items with owners and deadlines\n- Next steps",
+    "variables": [
+      {"name": "meeting_type", "description": "Type of meeting", "default": ""},
+      {"name": "participants", "description": "Who's attending", "default": ""},
+      {"name": "duration", "description": "Meeting length", "default": ""},
+      {"name": "goals", "description": "Meeting objectives", "default": ""}
+    ],
+    "category": "business",
+    "subcategory": "productivity",
+    "tags": ["meetings", "productivity", "collaboration", "documentation"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": false
+  },
+  {
+    "title": "OKR Framework Builder",
+    "description": "Create measurable OKRs (Objectives and Key Results) aligned with company strategy.",
+    "content": "Help me create OKRs for:\n\nTeam/Department: {{team}}\nTime period: {{period}}\nCompany objectives: {{company_goals}}\nCurrent challenges: {{challenges}}\n\nFor each objective, create:\n1. Clear, inspirational objective statement\n2. 3-5 measurable key results\n3. Alignment with company goals\n4. Owner and contributors\n5. Success metrics and targets\n6. Potential risks and mitigation\n\nEnsure objectives are ambitious but achievable, and key results are specific and measurable.",
+    "variables": [
+      {"name": "team", "description": "Team or department", "default": ""},
+      {"name": "period", "description": "Quarter or time period", "default": "Q1 2024"},
+      {"name": "company_goals", "description": "Overall company objectives", "default": ""},
+      {"name": "challenges", "description": "Current obstacles", "default": ""}
+    ],
+    "category": "business",
+    "subcategory": "goal-setting",
+    "tags": ["okr", "goal-setting", "strategy", "performance"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "pro",
+    "featured": false
+  },
+  {
+    "title": "Pricing Strategy Analyzer",
+    "description": "Develop data-driven pricing strategies with multiple models and positioning analysis.",
+    "content": "Help me develop a pricing strategy for:\n\nProduct/Service: {{product}}\nTarget market: {{market}}\nCost structure: {{costs}}\nCompetitor pricing: {{competitor_prices}}\nValue proposition: {{value_prop}}\n\nAnalyze and recommend:\n1. Pricing models (subscription, usage-based, tiered, freemium)\n2. Price points for each tier\n3. Value-based pricing justification\n4. Psychological pricing tactics\n5. Discounting strategy\n6. Price sensitivity analysis\n7. Revenue projections for each model\n8. A/B testing recommendations",
+    "variables": [
+      {"name": "product", "description": "Product or service", "default": ""},
+      {"name": "market", "description": "Target market segment", "default": ""},
+      {"name": "costs", "description": "Your cost structure", "default": ""},
+      {"name": "competitor_prices", "description": "How competitors price", "default": ""},
+      {"name": "value_prop", "description": "Unique value you provide", "default": ""}
+    ],
+    "category": "business",
+    "subcategory": "pricing",
+    "tags": ["pricing", "revenue", "strategy", "monetization"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "pro",
+    "featured": false
+  },
+  {
+    "title": "Customer Journey Mapping",
+    "description": "Map customer journeys with touchpoints, emotions, pain points, and improvement opportunities.",
+    "content": "Create a comprehensive customer journey map for:\n\nCustomer persona: {{persona}}\nProduct/Service: {{product}}\nJourney type: {{journey_type}}\n\nMap each stage:\n1. Awareness\n2. Consideration\n3. Decision\n4. Purchase\n5. Onboarding\n6. Usage\n7. Loyalty/Advocacy\n\nFor each stage, identify:\n- Customer goals and questions\n- Touchpoints and channels\n- Emotions and pain points\n- Opportunities for improvement\n- Success metrics\n\nProvide recommendations for optimizing the journey.",
+    "variables": [
+      {"name": "persona", "description": "Customer persona/segment", "default": ""},
+      {"name": "product", "description": "Product or service", "default": ""},
+      {"name": "journey_type", "description": "B2B or B2C, new customer or renewal", "default": "B2B new customer"}
+    ],
+    "category": "business",
+    "subcategory": "customer-experience",
+    "tags": ["customer-journey", "ux", "customer-experience", "marketing"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "pro",
+    "featured": false
+  },
+  {
+    "title": "SWOT Analysis Generator",
+    "description": "Conduct thorough SWOT analysis with strategic recommendations and action plans.",
+    "content": "Conduct a comprehensive SWOT analysis for:\n\nCompany/Project: {{subject}}\nIndustry: {{industry}}\nCurrent situation: {{situation}}\nGoals: {{goals}}\n\nAnalyze:\n\n**Strengths:**\n- Internal capabilities and advantages\n- Resources and assets\n- Competitive advantages\n\n**Weaknesses:**\n- Internal limitations\n- Resource gaps\n- Areas for improvement\n\n**Opportunities:**\n- Market trends\n- External possibilities\n- Growth potential\n\n**Threats:**\n- Market challenges\n- Competitive threats\n- External risks\n\nProvide:\n1. Detailed SWOT matrix\n2. Strategic recommendations\n3. Priority action items\n4. Key metrics to track",
+    "variables": [
+      {"name": "subject", "description": "What to analyze", "default": ""},
+      {"name": "industry", "description": "Industry context", "default": ""},
+      {"name": "situation", "description": "Current state", "default": ""},
+      {"name": "goals", "description": "Strategic goals", "default": ""}
+    ],
+    "category": "business",
+    "subcategory": "strategy",
+    "tags": ["swot", "strategy", "analysis", "planning"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": false
+  },
+  {
+    "title": "Literature Review Assistant",
+    "description": "Analyze research papers and synthesize findings for academic literature reviews.",
+    "content": "Help me conduct a literature review on: {{topic}}\n\nField: {{field}}\nScope: {{scope}}\nTime range: {{years}}\n\nFor each source I provide, help me:\n1. Extract key arguments and findings\n2. Identify methodology\n3. Note limitations\n4. Find connections to other works\n5. Assess credibility and relevance\n\nThen synthesize into:\n- Thematic analysis\n- Methodology comparison\n- Gap identification\n- Research questions for further study",
+    "variables": [
+      {"name": "topic", "description": "Research topic", "default": ""},
+      {"name": "field", "description": "Academic field", "default": ""},
+      {"name": "scope", "description": "Scope of review", "default": ""},
+      {"name": "years", "description": "Time range to cover", "default": "last 5 years"}
+    ],
+    "category": "research",
+    "subcategory": "academic",
+    "tags": ["literature-review", "research", "academic", "analysis"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "pro",
+    "featured": false
+  },
+  {
+    "title": "Research Question Refiner",
+    "description": "Refine and improve research questions for clarity, feasibility, and significance.",
+    "content": "Help me refine my research question:\n\nInitial question: {{question}}\nField: {{field}}\nAvailable resources: {{resources}}\nTimeline: {{timeline}}\n\nEvaluate and improve for:\n1. Clarity and specificity\n2. Feasibility\n3. Originality\n4. Significance\n5. Measurability\n\nProvide:\n- 3 refined versions\n- Sub-questions for each\n- Methodology suggestions\n- Potential challenges\n- Success metrics",
+    "variables": [
+      {"name": "question", "description": "Your initial research question", "default": ""},
+      {"name": "field", "description": "Research field", "default": ""},
+      {"name": "resources", "description": "Available resources and data", "default": ""},
+      {"name": "timeline", "description": "Research timeline", "default": ""}
+    ],
+    "category": "research",
+    "subcategory": "methodology",
+    "tags": ["research-questions", "methodology", "academic", "planning"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "pro",
+    "featured": false
+  },
+  {
+    "title": "Data Analysis Interpreter",
+    "description": "Interpret statistical results and explain implications in plain language.",
+    "content": "Help me interpret these research results:\n\nStudy type: {{study_type}}\nResearch question: {{question}}\nData summary: {{data}}\nStatistical results: {{stats}}\n\nProvide:\n1. Plain language explanation of findings\n2. Statistical significance interpretation\n3. Practical implications\n4. Limitations and caveats\n5. Suggestions for further analysis\n6. How to present in paper/presentation\n\nAudience level: {{audience}}",
+    "variables": [
+      {"name": "study_type", "description": "Type of study", "default": ""},
+      {"name": "question", "description": "Research question", "default": ""},
+      {"name": "data", "description": "Data summary", "default": ""},
+      {"name": "stats", "description": "Statistical results", "default": ""},
+      {"name": "audience", "description": "Academic, general public, etc.", "default": "academic"}
+    ],
+    "category": "research",
+    "subcategory": "data-analysis",
+    "tags": ["data-analysis", "statistics", "research", "interpretation"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "pro",
+    "featured": false
+  },
+  {
+    "title": "Survey Design Assistant",
+    "description": "Design effective surveys with validated questions and optimal structure.",
+    "content": "Help me design a survey for:\n\nResearch goal: {{goal}}\nTarget population: {{population}}\nSample size: {{sample_size}}\nKey variables: {{variables}}\n\nCreate:\n1. Survey structure and flow\n2. Question wording (avoid bias)\n3. Response scales\n4. Demographic questions\n5. Validation questions\n6. Estimated completion time\n7. Analysis plan\n8. Pilot testing recommendations\n\nSurvey type: {{type}}",
+    "variables": [
+      {"name": "goal", "description": "What you want to learn", "default": ""},
+      {"name": "population", "description": "Who you're surveying", "default": ""},
+      {"name": "sample_size", "description": "Expected respondents", "default": ""},
+      {"name": "variables", "description": "What you want to measure", "default": ""},
+      {"name": "type", "description": "Online, phone, in-person", "default": "online"}
+    ],
+    "category": "research",
+    "subcategory": "methodology",
+    "tags": ["surveys", "research-design", "methodology", "data-collection"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "pro",
+    "featured": false
+  },
+  {
+    "title": "Citation Manager",
+    "description": "Format citations and bibliographies in any style (APA, MLA, Chicago, etc.).",
+    "content": "Format the following sources in {{citation_style}} style:\n\nSources:\n{{sources}}\n\nProvide:\n1. In-text citations for each source\n2. Full bibliography/reference list\n3. Notes on any special formatting\n4. How to cite specific elements (quotes, paraphrases, etc.)\n\nAlso check for:\n- Consistency across all citations\n- Proper capitalization and punctuation\n- Correct ordering\n- Any missing information",
+    "variables": [
+      {"name": "citation_style", "description": "Citation style", "default": "APA 7th edition"},
+      {"name": "sources", "description": "List your sources with all available info", "default": ""}
+    ],
+    "category": "research",
+    "subcategory": "academic-writing",
+    "tags": ["citations", "bibliography", "academic-writing", "formatting"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": false
+  },
+  {
+    "title": "Hypothesis Generator",
+    "description": "Generate testable hypotheses with null/alternative versions and testing methods.",
+    "content": "Help me develop hypotheses for my research:\n\nResearch topic: {{topic}}\nTheoretical framework: {{framework}}\nVariables of interest: {{variables}}\nExpected relationships: {{expectations}}\n\nGenerate:\n1. Primary hypothesis (null and alternative)\n2. Secondary hypotheses\n3. Directional vs non-directional considerations\n4. Operational definitions\n5. Testing methods for each\n6. Expected confounding variables\n7. How to measure each construct",
+    "variables": [
+      {"name": "topic", "description": "Research topic", "default": ""},
+      {"name": "framework", "description": "Theoretical basis", "default": ""},
+      {"name": "variables", "description": "Key variables", "default": ""},
+      {"name": "expectations", "description": "What you expect to find", "default": ""}
+    ],
+    "category": "research",
+    "subcategory": "methodology",
+    "tags": ["hypothesis", "research-design", "methodology", "scientific-method"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "pro",
+    "featured": false
+  },
+  {
+    "title": "Decision Matrix Builder",
+    "description": "Make difficult decisions using weighted matrices and systematic analysis.",
+    "content": "Help me make a decision about: {{decision}}\n\nOptions I'm considering:\n{{options}}\n\nFactors that matter to me:\n{{factors}}\n\nCreate:\n1. Weighted decision matrix\n2. Pros/cons for each option\n3. Risk assessment\n4. Second-order consequences\n5. Reversibility analysis\n6. Clear recommendation with reasoning\n\nAsk clarifying questions if needed before finalizing.",
+    "variables": [
+      {"name": "decision", "description": "What you're deciding", "default": ""},
+      {"name": "options", "description": "Possible choices", "default": ""},
+      {"name": "factors", "description": "Important criteria", "default": ""}
+    ],
+    "category": "productivity",
+    "subcategory": "decision-making",
+    "tags": ["decision-making", "analysis", "productivity", "strategy"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": true
+  },
+  {
+    "title": "Weekly Planning Framework",
+    "description": "Plan productive weeks with time-blocking, energy management, and priority matrices.",
+    "content": "Help me plan my week effectively.\n\nMy roles: {{roles}}\nCurrent projects: {{projects}}\nUpcoming deadlines: {{deadlines}}\nAvailable hours: {{hours}}\n\nCreate:\n1. Priority matrix (urgent/important)\n2. Time-blocked schedule\n3. MIT (Most Important Tasks) for each day\n4. Buffer time for unexpected\n5. Weekly review questions\n6. Energy management suggestions\n\nConsider my energy patterns: {{energy}}",
+    "variables": [
+      {"name": "roles", "description": "Your different roles/responsibilities", "default": ""},
+      {"name": "projects", "description": "Active projects", "default": ""},
+      {"name": "deadlines", "description": "Upcoming deadlines", "default": ""},
+      {"name": "hours", "description": "Hours available per day", "default": ""},
+      {"name": "energy", "description": "When you have most energy", "default": "morning person"}
+    ],
+    "category": "productivity",
+    "subcategory": "planning",
+    "tags": ["planning", "time-management", "productivity", "scheduling"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": true
+  },
+  {
+    "title": "Email Management System",
+    "description": "Create email workflows and templates for inbox zero and faster responses.",
+    "content": "Help me create an email management system:\n\nCurrent email volume: {{volume}}\nTypes of emails: {{types}}\nResponse time goals: {{response_goals}}\nKey challenges: {{challenges}}\n\nProvide:\n1. Folder/label structure\n2. Filtering rules\n3. Response templates for common emails\n4. Time-blocking strategy\n5. When to use: reply, forward, archive, delete, defer\n6. Email batching schedule\n7. Tools and automation suggestions\n8. Email writing best practices for faster responses",
+    "variables": [
+      {"name": "volume", "description": "Daily email count", "default": ""},
+      {"name": "types", "description": "Categories of emails you get", "default": ""},
+      {"name": "response_goals", "description": "How fast you want to respond", "default": ""},
+      {"name": "challenges", "description": "Current email pain points", "default": ""}
+    ],
+    "category": "productivity",
+    "subcategory": "email",
+    "tags": ["email", "inbox-zero", "productivity", "automation"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "starter",
+    "featured": false
+  },
+  {
+    "title": "Focus Session Planner",
+    "description": "Design deep work sessions with optimal timing, breaks, and environment setup.",
+    "content": "Help me plan a focused work session for:\n\nTask: {{task}}\nEstimated duration: {{duration}}\nComplexity level: {{complexity}}\nDistractions I face: {{distractions}}\n\nCreate a plan with:\n1. Pre-session preparation (5 min)\n2. Session structure (work/break intervals)\n3. Environment setup checklist\n4. Tools to enable/disable\n5. Success metrics\n6. Recovery/transition plan\n\nConsider:\n- Pomodoro vs longer blocks\n- Physical environment optimization\n- Digital environment (apps to block/use)\n- Energy management",
+    "variables": [
+      {"name": "task", "description": "What you're working on", "default": ""},
+      {"name": "duration", "description": "How long you have", "default": ""},
+      {"name": "complexity", "description": "Task difficulty", "default": "high"},
+      {"name": "distractions", "description": "Your common distractions", "default": ""}
+    ],
+    "category": "productivity",
+    "subcategory": "focus",
+    "tags": ["deep-work", "focus", "productivity", "time-management"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "starter",
+    "featured": false
+  },
+  {
+    "title": "Delegation Framework",
+    "description": "Decide what to delegate and create clear delegation plans with success criteria.",
+    "content": "Help me delegate effectively:\n\nTask to potentially delegate: {{task}}\nTeam members available: {{team}}\nCurrent workload: {{workload}}\nUrgency: {{urgency}}\n\nAnalyze:\n1. Should this be delegated? (vs do yourself, automate, eliminate)\n2. Who is the best person to delegate to?\n3. What context do they need?\n4. What level of authority to grant?\n5. Checkpoints and deadlines\n6. Success criteria\n7. Communication plan\n8. How to provide feedback\n\nCreate a delegation brief I can share with the person.",
+    "variables": [
+      {"name": "task", "description": "Task to delegate", "default": ""},
+      {"name": "team", "description": "Available team members and skills", "default": ""},
+      {"name": "workload", "description": "Everyone's current workload", "default": ""},
+      {"name": "urgency", "description": "How urgent is this", "default": ""}
+    ],
+    "category": "productivity",
+    "subcategory": "leadership",
+    "tags": ["delegation", "leadership", "productivity", "management"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "starter",
+    "featured": false
+  },
+  {
+    "title": "Habit Formation Plan",
+    "description": "Build lasting habits using behavior design principles and tracking systems.",
+    "content": "Help me build a new habit:\n\nDesired habit: {{habit}}\nWhy it matters: {{why}}\nCurrent routine: {{routine}}\nPotential obstacles: {{obstacles}}\n\nCreate a plan using:\n1. Tiny habits approach (start small)\n2. Implementation intention (when X, then Y)\n3. Habit stacking (attach to existing habit)\n4. Environment design\n5. Tracking method\n6. Celebration/reward\n7. Obstacle planning (if-then plans)\n8. 30-day progression schedule\n\nMake it as easy as possible to succeed.",
+    "variables": [
+      {"name": "habit", "description": "Habit you want to build", "default": ""},
+      {"name": "why", "description": "Why this matters to you", "default": ""},
+      {"name": "routine", "description": "Current daily routine", "default": ""},
+      {"name": "obstacles", "description": "What might prevent you", "default": ""}
+    ],
+    "category": "productivity",
+    "subcategory": "habits",
+    "tags": ["habits", "behavior-change", "productivity", "self-improvement"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": false
+  },
+  {
+    "title": "Story Structure Builder",
+    "description": "Develop complete story structures with character arcs, plot points, and scene breakdowns.",
+    "content": "Help me develop a story with:\n\nGenre: {{genre}}\nTheme: {{theme}}\nSetting: {{setting}}\nProtagonist: {{protagonist}}\n\nCreate:\n1. Three-act structure outline\n2. Character arc for protagonist\n3. Supporting character sketches\n4. Key plot points\n5. Conflict escalation map\n6. Possible endings (3 versions)\n7. Scene-by-scene breakdown for Act 1\n\nTone: {{tone}}\nTarget audience: {{audience}}",
+    "variables": [
+      {"name": "genre", "description": "Story genre", "default": ""},
+      {"name": "theme", "description": "Central theme", "default": ""},
+      {"name": "setting", "description": "Where/when story takes place", "default": ""},
+      {"name": "protagonist", "description": "Main character description", "default": ""},
+      {"name": "tone", "description": "Story tone", "default": ""},
+      {"name": "audience", "description": "Target readers", "default": ""}
+    ],
+    "category": "creative",
+    "subcategory": "storytelling",
+    "tags": ["storytelling", "fiction", "writing", "creative"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "pro",
+    "featured": true
+  },
+  {
+    "title": "Brand Voice Guide Generator",
+    "description": "Create comprehensive brand voice guidelines with examples and usage rules.",
+    "content": "Create a comprehensive brand voice guide for:\n\nBrand: {{brand}}\nIndustry: {{industry}}\nTarget audience: {{audience}}\nBrand values: {{values}}\nPersonality traits: {{traits}}\n\nInclude:\n1. Voice characteristics (3-4 adjectives with explanations)\n2. Tone variations by context\n3. Do's and Don'ts with examples\n4. Word choice guidelines\n5. Sentence structure preferences\n6. Sample copy for: website, email, social, error messages\n7. Competitor voice comparison",
+    "variables": [
+      {"name": "brand", "description": "Brand name", "default": ""},
+      {"name": "industry", "description": "Industry", "default": ""},
+      {"name": "audience", "description": "Target audience", "default": ""},
+      {"name": "values", "description": "Brand values", "default": ""},
+      {"name": "traits", "description": "Personality traits", "default": ""}
+    ],
+    "category": "creative",
+    "subcategory": "branding",
+    "tags": ["brand-voice", "branding", "copywriting", "guidelines"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "pro",
+    "featured": false
+  },
+  {
+    "title": "Character Development Worksheet",
+    "description": "Create deep, memorable characters with backgrounds, motivations, and flaws.",
+    "content": "Help me develop a character:\n\nBasic concept: {{concept}}\nRole in story: {{role}}\nGenre: {{genre}}\n\nCreate a complete character profile:\n\n**External:**\n- Physical description\n- Mannerisms and speech patterns\n- Occupation and skills\n\n**Internal:**\n- Core motivation (what they want)\n- Deep need (what they actually need)\n- Greatest fear\n- Fatal flaw\n- Internal conflict\n\n**Background:**\n- Formative experience\n- Relationships\n- Secrets\n\n**Arc:**\n- Starting state\n- Transformation needed\n- Ending state\n\nProvide specific examples and scenes that reveal character.",
+    "variables": [
+      {"name": "concept", "description": "Basic character idea", "default": ""},
+      {"name": "role", "description": "Protagonist, antagonist, etc.", "default": ""},
+      {"name": "genre", "description": "Story genre", "default": ""}
+    ],
+    "category": "creative",
+    "subcategory": "character-development",
+    "tags": ["characters", "fiction", "storytelling", "writing"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "pro",
+    "featured": false
+  },
+  {
+    "title": "World-Building Framework",
+    "description": "Build rich, consistent fictional worlds with culture, history, and rules.",
+    "content": "Help me build a fictional world for:\n\nGenre: {{genre}}\nCore concept: {{concept}}\nTone: {{tone}}\n\nDevelop:\n\n**Physical World:**\n- Geography and climate\n- Key locations\n- Technology/magic level\n\n**Society:**\n- Government and power structures\n- Social hierarchy\n- Economy and trade\n- Cultural norms and taboos\n\n**History:**\n- Founding events\n- Major conflicts\n- Current tensions\n\n**Rules:**\n- Magic/tech system (limits and costs)\n- Natural laws (what's different from our world)\n- Internal consistency checks\n\nProvide a world bible template I can expand.",
+    "variables": [
+      {"name": "genre", "description": "Fantasy, sci-fi, etc.", "default": ""},
+      {"name": "concept", "description": "Central world concept", "default": ""},
+      {"name": "tone", "description": "World tone", "default": ""}
+    ],
+    "category": "creative",
+    "subcategory": "world-building",
+    "tags": ["world-building", "fantasy", "sci-fi", "storytelling"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "pro",
+    "featured": false
+  },
+  {
+    "title": "Dialogue Polisher",
+    "description": "Improve dialogue for naturalness, subtext, and character voice consistency.",
+    "content": "Help me improve this dialogue:\n\n```{{dialogue}}```\n\nContext: {{context}}\nCharacter speaking: {{character}}\nPurpose of scene: {{purpose}}\n\nReview for:\n1. Naturalness (do people actually talk like this?)\n2. Character voice consistency\n3. Subtext (show don't tell emotions)\n4. Brevity (cut unnecessary words)\n5. Rhythm and pacing\n6. Action beats vs dialogue tags\n7. Conflict and tension\n\nProvide:\n- Revised dialogue\n- Explanation of changes\n- Character voice notes",
+    "variables": [
+      {"name": "dialogue", "description": "Dialogue to improve", "default": ""},
+      {"name": "context", "description": "What's happening in scene", "default": ""},
+      {"name": "character", "description": "Character traits", "default": ""},
+      {"name": "purpose", "description": "What scene needs to accomplish", "default": ""}
+    ],
+    "category": "creative",
+    "subcategory": "dialogue",
+    "tags": ["dialogue", "fiction", "writing", "editing"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "starter",
+    "featured": false
+  },
+  {
+    "title": "Video Script Writer",
+    "description": "Write engaging video scripts with hooks, structure, and platform optimization.",
+    "content": "Write a video script for:\n\nVideo topic: {{topic}}\nPlatform: {{platform}}\nTarget length: {{length}}\nAudience: {{audience}}\nGoal: {{goal}}\n\nScript should include:\n\n**Hook (first 3 seconds):**\n- Attention-grabbing opening\n- Pattern interrupt\n\n**Introduction:**\n- Preview of value\n- Why viewer should watch\n\n**Main content:**\n- Clear structure with {{num_points}} main points\n- Visual suggestions\n- B-roll notes\n- On-screen text recommendations\n\n**Call to action:**\n- Specific next step\n- Engagement prompt\n\nFormat: {{format}}\nTone: {{tone}}",
+    "variables": [
+      {"name": "topic", "description": "Video topic", "default": ""},
+      {"name": "platform", "description": "YouTube, TikTok, Instagram, etc.", "default": "YouTube"},
+      {"name": "length", "description": "Video duration", "default": "5 minutes"},
+      {"name": "audience", "description": "Target viewers", "default": ""},
+      {"name": "goal", "description": "What you want viewers to do", "default": ""},
+      {"name": "num_points", "description": "Number of main points", "default": "3"},
+      {"name": "format", "description": "Talking head, voiceover, etc.", "default": "talking head"},
+      {"name": "tone", "description": "Video tone", "default": "educational and engaging"}
+    ],
+    "category": "creative",
+    "subcategory": "video",
+    "tags": ["video", "scripts", "youtube", "content-creation"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "starter",
+    "featured": false
+  },
+  {
+    "title": "Naming Generator",
+    "description": "Generate creative names for brands, products, characters, or projects with meaning.",
+    "content": "Generate names for: {{subject}}\n\nType: {{type}}\nIndustry/Genre: {{industry}}\nDesired qualities: {{qualities}}\nLength preference: {{length}}\nMust avoid: {{avoid}}\n\nFor each name provide:\n1. The name itself\n2. Meaning/etymology\n3. Why it fits\n4. Domain availability (if applicable)\n5. Potential variations\n\nGenerate {{count}} options in these categories:\n- Descriptive names\n- Invented/portmanteau names\n- Metaphorical names\n- Names based on: {{inspiration}}",
+    "variables": [
+      {"name": "subject", "description": "What needs naming", "default": ""},
+      {"name": "type", "description": "Brand, product, character, etc.", "default": ""},
+      {"name": "industry", "description": "Industry or genre", "default": ""},
+      {"name": "qualities", "description": "Desired attributes (modern, playful, etc.)", "default": ""},
+      {"name": "length", "description": "Short, medium, long", "default": "short"},
+      {"name": "avoid", "description": "What to avoid", "default": ""},
+      {"name": "count", "description": "Number of names", "default": "15"},
+      {"name": "inspiration", "description": "Source of inspiration", "default": "mythology, nature, science"}
+    ],
+    "category": "creative",
+    "subcategory": "naming",
+    "tags": ["naming", "branding", "creativity", "ideation"],
+    "platforms": ["chatgpt", "claude", "gemini"],
+    "tier": "free",
+    "featured": false
+  }
+]
